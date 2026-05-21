@@ -17,7 +17,8 @@
 <meta name="twitter:title" content="The Leading Home Office Company">
 <meta name="twitter:description" content="Premium home office equipment with worldwide delivery.">
 <meta name="twitter:image" content="https://homeoffice.company/wp-content/uploads/2025/11/best-home-office-company.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/saffron.css">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{
@@ -57,47 +58,55 @@
 <body>
 
 <!-- NAV -->
-<nav class="site-nav">
+<header class="site-header">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#1B4FD8"/><path d="M6 20L18 8L30 20V30H23V24H13V30H6V20Z" fill="white"/></svg>
-      Home Office Company
-    </a>
+    <a href="/" class="nav-logo">Home Office Company</a>
     <ul class="nav-links">
       <li><a href="#countries">Shop by Country</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#countries" class="nav-cta">SHOP NOW</a></li>
+      <li><a href="#countries" class="nav-cta">Shop now</a></li>
     </ul>
-    <button class="hamburger" onclick="openMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="menuBtn" aria-expanded="false" aria-label="Menu" onclick="openMobileNav()"><span></span><span></span><span></span></button>
   </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="closeMobileNav()">&times;</button>
-  <a href="/">Home</a><a href="#countries">Shop by Country</a><a href="/blog/">Blog</a>
-  <a href="#faq">FAQ</a><a href="#contact">Contact</a>
-  <a href="#countries" style="color:var(--accent)">SHOP NOW</a>
+</header>
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&#x2715;</button>
+  <a href="/">Home</a>
+  <a href="#countries">Shop by Country</a>
+  <a href="/blog/">Blog</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="#countries" class="mobile-shop-cta">Shop now</a>
 </div>
-<a href="#countries" class="sticky-cta">SHOP NOW</a>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="/assets/hero.jpg" alt="Home office professional working productively" class="hero-img" loading="eager" fetchpriority="high">
-  <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-inner">
       <span class="hero-badge">Worldwide Delivery Available</span>
-      <h2>Thank you for visiting Home Office Company</h2>
-      <p>Premium home office equipment and machines for professionals who take their workspace seriously. Delivered worldwide.</p>
+      <h2>Your <span class="swatch">Home Office</span> Upgrade Starts Here</h2>
+      <p>Premium home office equipment for professionals who take their workspace seriously. Delivered worldwide.</p>
       <div class="hero-btns">
-        <a href="#countries" class="btn btn-accent" style="min-width:180px;">Shop by Country</a>
+        <a href="#countries" class="btn btn-accent">Shop by Country</a>
         <a href="#buying-guide" class="btn btn-outline">Buying Guide</a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>200+</strong><span>Blog articles</span></div>
-        <div class="hero-stat"><strong>7</strong><span>Countries served</span></div>
-        <div class="hero-stat"><strong>24/7</strong><span>Customer support</span></div>
+      <div class="hero-trust">
+        <span class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secure checkout
+        </span>
+        <span class="trust-dot"></span>
+        <span class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Tracked international shipping
+        </span>
+        <span class="trust-dot"></span>
+        <span class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 0 0-4-4H4"/></svg>
+          30-day returns
+        </span>
       </div>
     </div>
   </div>
@@ -317,105 +326,106 @@
       <p>Everything you need to know before you buy.</p>
     </div>
     <div class="faq-cols">
-      <div><div class="accordion-item">
-  <button class="accordion-btn"><span>What types of home office equipment does Home Office Company sell?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>We offer a comprehensive range of home office equipment including ergonomic chairs, standing desks, monitor stands, desk organisers, air purifiers, CO2 meters, under-desk exercise equipment, document shredders, money counters, and much more. Our catalogue covers everything you need to build a productive, comfortable workspace.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do you ship internationally?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, we deliver worldwide. We have dedicated country stores for Australia, Canada, Ireland, New Zealand, Singapore, the United Kingdom, and the United States, ensuring fast local delivery and relevant product selections wherever you are.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>How long does delivery take?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Delivery times vary by country and product. Generally, orders reach customers within 3–10 business days. Express shipping options may be available at checkout. Check your country-specific store for the most accurate delivery estimates.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Is your checkout process secure?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Absolutely. All transactions are processed through fully encrypted, PCI-compliant payment gateways. We do not store your payment details, and every order is protected by industry-standard SSL security.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>What is your returns policy?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>We offer a straightforward returns process. If you are not satisfied with your purchase, you can return most items within 30 days of receipt in their original condition. Please visit our Shipping & Returns page for full details.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Are your ergonomic chairs suitable for people with back pain?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, our ergonomic chairs are specifically designed to support proper spinal alignment, reduce lumbar strain, and prevent the muscle fatigue associated with long hours of sitting. Many customers report significant relief from lower back discomfort after switching to our ergonomic models.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Can I use the under-desk exercise equipment while actually working?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Designed for exactly this purpose. Under-desk ellipticals, pedal exercisers, and balance boards allow you to stay gently active while working, without disrupting your concentration or creating noise that would disturb colleagues on calls.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do your standing desks require assembly?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Most standing desks ship flat-packed with clear step-by-step assembly instructions. Tools required are typically minimal. Full instructions are included, and our customer support team is available if you need additional guidance.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>What is the weight capacity of your desk chairs?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Weight capacities vary by model. Most of our standard ergonomic chairs support up to 120–150 kg. Heavy-duty models with higher capacities are available — please check individual product listings for specific specifications.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do your air purifiers work for home offices?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Our air purifiers are sized for home office environments, filtering airborne particles, allergens, and pollutants to maintain clean, fresh air throughout your workday. Improved air quality has been shown to boost concentration and reduce fatigue.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Are CO2 meters worth having in a home office?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>CO2 levels above 1000 ppm have been linked to reduced cognitive function and increased tiredness. A CO2 meter lets you monitor air quality in real time and take action — opening a window or running an air purifier — before your performance dips.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do you offer bulk or business orders?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, we welcome business and bulk enquiries. Please contact us at theteam@customersupport.care with your requirements and we will provide a tailored quote including volume pricing where applicable.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>What payment methods do you accept?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Accepted payment methods include major credit and debit cards (Visa, Mastercard, American Express), PayPal, and other methods as listed at checkout in your country's store. All prices are displayed in local currency.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Can I track my order?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes. Once your order is dispatched, you will receive a tracking number by email allowing you to monitor your shipment in real time through the carrier's website.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Are your products compatible with Mac and Windows setups?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, all our office furniture and equipment — desks, monitor stands, cable management, keyboard trays — are entirely platform-agnostic and work equally well with Mac, Windows, Linux, or any other operating system.</p></div>
+      <div><div class="faq-item">
+  <button class="faq-question"><h3>What types of home office equipment does Home Office Company sell?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>We offer a comprehensive range of home office equipment including ergonomic chairs, standing desks, monitor stands, desk organisers, air purifiers, CO2 meters, under-desk exercise equipment, document shredders, money counters, and much more. Our catalogue covers everything you need to build a productive, comfortable workspace.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do you ship internationally?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, we deliver worldwide. We have dedicated country stores for Australia, Canada, Ireland, New Zealand, Singapore, the United Kingdom, and the United States, ensuring fast local delivery and relevant product selections wherever you are.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>How long does delivery take?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Delivery times vary by country and product. Generally, orders reach customers within 3–10 business days. Express shipping options may be available at checkout. Check your country-specific store for the most accurate delivery estimates.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Is your checkout process secure?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Absolutely. All transactions are processed through fully encrypted, PCI-compliant payment gateways. We do not store your payment details, and every order is protected by industry-standard SSL security.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>What is your returns policy?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>We offer a straightforward returns process. If you are not satisfied with your purchase, you can return most items within 30 days of receipt in their original condition. Please visit our Shipping & Returns page for full details.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Are your ergonomic chairs suitable for people with back pain?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, our ergonomic chairs are specifically designed to support proper spinal alignment, reduce lumbar strain, and prevent the muscle fatigue associated with long hours of sitting. Many customers report significant relief from lower back discomfort after switching to our ergonomic models.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Can I use the under-desk exercise equipment while actually working?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Designed for exactly this purpose. Under-desk ellipticals, pedal exercisers, and balance boards allow you to stay gently active while working, without disrupting your concentration or creating noise that would disturb colleagues on calls.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do your standing desks require assembly?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Most standing desks ship flat-packed with clear step-by-step assembly instructions. Tools required are typically minimal. Full instructions are included, and our customer support team is available if you need additional guidance.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>What is the weight capacity of your desk chairs?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Weight capacities vary by model. Most of our standard ergonomic chairs support up to 120–150 kg. Heavy-duty models with higher capacities are available — please check individual product listings for specific specifications.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do your air purifiers work for home offices?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Our air purifiers are sized for home office environments, filtering airborne particles, allergens, and pollutants to maintain clean, fresh air throughout your workday. Improved air quality has been shown to boost concentration and reduce fatigue.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Are CO2 meters worth having in a home office?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>CO2 levels above 1000 ppm have been linked to reduced cognitive function and increased tiredness. A CO2 meter lets you monitor air quality in real time and take action — opening a window or running an air purifier — before your performance dips.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do you offer bulk or business orders?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, we welcome business and bulk enquiries. Please contact us at theteam@customersupport.care with your requirements and we will provide a tailored quote including volume pricing where applicable.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>What payment methods do you accept?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Accepted payment methods include major credit and debit cards (Visa, Mastercard, American Express), PayPal, and other methods as listed at checkout in your country's store. All prices are displayed in local currency.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Can I track my order?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes. Once your order is dispatched, you will receive a tracking number by email allowing you to monitor your shipment in real time through the carrier's website.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Are your products compatible with Mac and Windows setups?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, all our office furniture and equipment — desks, monitor stands, cable management, keyboard trays — are entirely platform-agnostic and work equally well with Mac, Windows, Linux, or any other operating system.</p></div></div>
 </div></div>
-      <div><div class="accordion-item">
-  <button class="accordion-btn"><span>How do I choose the right ergonomic chair?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Consider your height, weight, the number of hours you sit daily, and any existing posture issues. Key features to prioritise include adjustable lumbar support, seat depth, armrest height, and tilt tension. Our buying guide covers this in detail below.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do you sell monitor arms and dual-monitor stands?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, we stock a range of monitor arms and multi-monitor stands compatible with VESA-mounted screens. These help you achieve the optimal screen height and angle to reduce neck and eye strain.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>What is the difference between a balance ball chair and a kneeling chair?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>A balance ball chair uses an inflatable exercise ball as the seat, engaging your core muscles. A kneeling chair distributes weight between your shins and seat, encouraging a forward pelvic tilt. Both can reduce lower back strain, but suit different posture needs.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do document shredders work on staples and credit cards?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Many of our cross-cut and micro-cut shredders are capable of handling staples, paper clips, and credit cards. Check the individual product specification to confirm which materials each model can shred safely.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>How noisy are your money counting machines?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Our money counters operate at low noise levels, typically below 60 dB — comparable to normal conversation. They are designed for office environments and will not disrupt calls or concentration during normal operation.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Are your products covered by warranty?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, all products come with a manufacturer's warranty. The duration varies by product category, typically ranging from 12 to 24 months. Warranty terms are listed on each product page in your country's store.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Can I speak to someone before placing an order?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes. Our customer support team is reachable by email at theteam@customersupport.care or by phone at +66 098 391 3877. We aim to respond to all enquiries within one business day.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Is Home Office Company a legitimate registered business?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes. We are a division of Caruso Consulting Co Ltd, a properly registered company (VAT ID: 0765554000332) based in Phetchaburi, Thailand. Our legal pages — privacy policy, terms and conditions, and shipping and returns — are all publicly available on this website.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do your products come with instructions in English?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>All products sold through our English-language country stores include English-language instructions either in the box or as a downloadable PDF linked from the product page.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>What if a product arrives damaged?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>If your order arrives in a damaged condition, please photograph the damage and contact us at theteam@customersupport.care within 48 hours of delivery. We will arrange a replacement or full refund promptly.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Can I cancel my order after placing it?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Orders can typically be cancelled before they enter the dispatch process. Contact us as soon as possible after placing your order. Once dispatched, our standard returns process applies.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Do you sell accessories like desk mats, cable management, and monitor lights?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Yes, we stock a wide range of desk accessories including large desk pads, cable management trays, monitor light bars, webcam stands, and USB hubs. These are available in your relevant country store.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Are your products suitable for small apartments or studio flats?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Absolutely. We offer a range of compact and space-saving designs — including narrow standing desks, wall-mount monitor arms, and foldable laptop stands — specifically chosen to work well in smaller living spaces.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>How do I maintain an ergonomic chair?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Most ergonomic chairs require only occasional tightening of screws and periodic cleaning of the upholstery with a damp cloth. Pneumatic cylinders rarely need replacement, but if your chair sinks, a replacement cylinder can usually be fitted without professional help.</p></div>
-</div><div class="accordion-item">
-  <button class="accordion-btn"><span>Is it safe to use a standing desk all day?</span><span class="accordion-icon">+</span></button>
-  <div class="accordion-body"><p>Standing all day is not recommended — the ideal is to alternate between sitting and standing throughout the day. A ratio of approximately 1–2 hours of standing for every hour of sitting is a widely cited guideline. Our adjustable standing desks make this alternation easy and effortless.</p></div>
-</div></div>
+      <div><div class="faq-item">
+  <button class="faq-question"><h3>How do I choose the right ergonomic chair?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Consider your height, weight, the number of hours you sit daily, and any existing posture issues. Key features to prioritise include adjustable lumbar support, seat depth, armrest height, and tilt tension. Our buying guide covers this in detail below.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do you sell monitor arms and dual-monitor stands?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, we stock a range of monitor arms and multi-monitor stands compatible with VESA-mounted screens. These help you achieve the optimal screen height and angle to reduce neck and eye strain.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>What is the difference between a balance ball chair and a kneeling chair?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>A balance ball chair uses an inflatable exercise ball as the seat, engaging your core muscles. A kneeling chair distributes weight between your shins and seat, encouraging a forward pelvic tilt. Both can reduce lower back strain, but suit different posture needs.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do document shredders work on staples and credit cards?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Many of our cross-cut and micro-cut shredders are capable of handling staples, paper clips, and credit cards. Check the individual product specification to confirm which materials each model can shred safely.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>How noisy are your money counting machines?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Our money counters operate at low noise levels, typically below 60 dB — comparable to normal conversation. They are designed for office environments and will not disrupt calls or concentration during normal operation.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Are your products covered by warranty?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, all products come with a manufacturer's warranty. The duration varies by product category, typically ranging from 12 to 24 months. Warranty terms are listed on each product page in your country's store.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Can I speak to someone before placing an order?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes. Our customer support team is reachable by email at theteam@customersupport.care or by phone at +66 098 391 3877. We aim to respond to all enquiries within one business day.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Is Home Office Company a legitimate registered business?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes. We are a division of Caruso Consulting Co Ltd, a properly registered company (VAT ID: 0765554000332) based in Phetchaburi, Thailand. Our legal pages — privacy policy, terms and conditions, and shipping and returns — are all publicly available on this website.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do your products come with instructions in English?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>All products sold through our English-language country stores include English-language instructions either in the box or as a downloadable PDF linked from the product page.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>What if a product arrives damaged?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>If your order arrives in a damaged condition, please photograph the damage and contact us at theteam@customersupport.care within 48 hours of delivery. We will arrange a replacement or full refund promptly.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Can I cancel my order after placing it?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Orders can typically be cancelled before they enter the dispatch process. Contact us as soon as possible after placing your order. Once dispatched, our standard returns process applies.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Do you sell accessories like desk mats, cable management, and monitor lights?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Yes, we stock a wide range of desk accessories including large desk pads, cable management trays, monitor light bars, webcam stands, and USB hubs. These are available in your relevant country store.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Are your products suitable for small apartments or studio flats?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Absolutely. We offer a range of compact and space-saving designs — including narrow standing desks, wall-mount monitor arms, and foldable laptop stands — specifically chosen to work well in smaller living spaces.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>How do I maintain an ergonomic chair?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Most ergonomic chairs require only occasional tightening of screws and periodic cleaning of the upholstery with a damp cloth. Pneumatic cylinders rarely need replacement, but if your chair sinks, a replacement cylinder can usually be fitted without professional help.</p></div></div></div>
+</div><div class="faq-item">
+  <button class="faq-question"><h3>Is it safe to use a standing desk all day?</h3><span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span></button>
+  <div class="faq-answer"><div class="faq-answer-inner"><p>Standing all day is not recommended — the ideal is to alternate between sitting and standing throughout the day. A ratio of approximately 1–2 hours of standing for every hour of sitting is a widely cited guideline. Our adjustable standing desks make this alternation easy and effortless.</p></div></div>
+</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- BUYING GUIDE -->
-<section class="section section-alt" id="buying-guide">
-  <div class="container" style="max-width:900px;">
+<section class="section" id="buying-guide">
+  <div class="container">
+  <div class="buying-guide">
     <h2>Home Office Equipment Buying Guide</h2>
     <p style="color:var(--gray-600);font-size:1.05rem;margin-bottom:36px;">Everything you need to know to build a productive, healthy, and comfortable home office — from choosing your first ergonomic chair to optimising your air quality.</p>
 
@@ -461,6 +471,7 @@
     <h3>Making the Most of Your Home Office Budget</h3>
     <p>If you are working with a limited budget, prioritise in this order: your chair (the highest daily-use item), your monitor setup (eye strain is cumulative and costly), air quality monitoring (cheap CO2 meters are affordable and impactful), and then desk organisation. A standing desk is a worthy long-term investment once the fundamentals are in place.</p>
     <p>Remember that home office expenses may be tax-deductible in many countries. Consult your local tax authority or accountant for guidance relevant to your situation.</p>
+  </div><!-- /.buying-guide -->
   </div>
 </section>
 
@@ -583,7 +594,7 @@ Working from home has become the new normal for millions of...</p>
   <div class="container">
     <h2>Ready to Upgrade Your Home Office?</h2>
     <p>Select your country below and browse our full catalogue with local pricing and fast delivery.</p>
-    <a href="#countries" class="btn btn-accent" style="font-size:1.1rem;padding:18px 48px;">Shop by Country</a>
+    <a href="#countries" class="btn btn-yellow btn-pill">Shop by Country</a>
   </div>
 </section>
 
@@ -591,8 +602,9 @@ Working from home has become the new normal for millions of...</p>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
+      <div class="footer-col">
         <span class="footer-brand">Home Office Company</span>
+        <span class="footer-deliver-pill"><span class="footer-deliver-dot"></span>We Deliver Worldwide</span>
         <p style="font-size:.9rem;margin-bottom:16px;">A division of Caruso Consulting Co Ltd. Premium home office equipment with worldwide delivery.</p>
         <p style="font-size:.85rem;line-height:1.9;">VAT ID: 0765554000332<br>Suite 37, 47 Moo 1, T. Nawoong, Meaung<br>Phetchaburi, 76000, Thailand<br>Tel: <a href="tel:+66098391387">+66 098 391 3877</a><br>Email: <a href="mailto:theteam@customersupport.care">theteam@customersupport.care</a></p>
       </div>
