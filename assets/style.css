@@ -78,6 +78,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 2px;
   list-style: none;
   flex: 1;
